@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/launchFragment">
+
+    <fragment
+        android:id="@+id/launchFragment"
+        android:name="com.example.carpetcleaner.LaunchFragment"
+        tools:layout="@layout/fragment_launch">
+        <action
+            android:id="@+id/action_launchFragment_to_servicesFragment"
+            app:destination="@id/servicesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/customerScheduler"
+        android:name="com.example.carpetcleaner.scheduler.CustomerScheduler"
+        android:label="Contact Information"
+        tools:layout="@layout/fragment_customer_scheduler">
+        <action
+            android:id="@+id/action_customerScheduler_to_appointmentConfirmation"
+            app:destination="@id/appointmentConfirmation" />
+    </fragment>
+    <fragment
+        android:id="@+id/servicesFragment"
+        android:name="com.example.carpetcleaner.services.ServicesFragment"
+        android:label="Select A Service"
+        tools:layout="@layout/fragment_services">
+        <action
+            android:id="@+id/action_servicesFragment_to_expandedServiceFragment"
+            app:destination="@id/expandedServiceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/expandedServiceFragment"
+        android:name="com.example.carpetcleaner.expanded_service.ExpandedServiceFragment"
+        tools:layout="@layout/fragment_expanded_service">
+        <action
+            android:id="@+id/action_expandedServiceFragment_to_customerScheduler"
+            app:destination="@id/customerScheduler" />
+        <argument
+            android:name="serviceId"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_expandedServiceFragment_to_navigation"
+            app:destination="@id/appointmentConfirmation" />
+    </fragment>
+    <fragment
+        android:id="@+id/appointmentConfirmation"
+        android:name="com.example.carpetcleaner.review.AppointmentConfirmation"
+        android:label="@string/review"
+        tools:layout="@layout/fragment_appointment_confirmation">
+        <action
+            android:id="@+id/action_appointmentConfirmation_to_editServiceFragment"
+            app:destination="@id/editServiceFragment" />
+        <action
+            android:id="@+id/action_appointmentConfirmation_to_servicesFragment"
+            app:destination="@id/servicesFragment" />
+        <action
+            android:id="@+id/action_appointmentConfirmation_to_customerScheduler"
+            app:destination="@id/customerScheduler" />
+    </fragment>
+    <fragment
+        android:id="@+id/editServiceFragment"
+        android:name="com.example.carpetcleaner.review.EditServiceFragment"
+        android:label="Edit Service"
+        tools:layout="@layout/fragment_edit_service">
+        <argument
+            android:name="serviceId"
+            app:argType="long" />
+        <argument
+            android:name="scheduledServiceId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_editServiceFragment_to_appointmentConfirmation"
+            app:destination="@id/appointmentConfirmation" />
+    </fragment>
+</navigation>

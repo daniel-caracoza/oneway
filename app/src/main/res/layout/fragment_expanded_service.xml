@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="service"
+            type="com.example.carpetcleaner.data.Service" />
+
+        <variable
+            name="viewModel"
+            type="com.example.carpetcleaner.expanded_service.ExpandedServiceViewModel" />
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/expanded_service_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:transitionName="@string/expanded_service_transition_name">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/img"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/service_image"
+                    android:cropToPadding="false"
+                    android:scaleType="fitStart"
+                    app:image="@{service.img}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:text="@{service.title}"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/img" />
+
+                <TextView
+                    android:id="@+id/subtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:text="@{service.subtitle}"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/title" />
+
+                <ImageButton
+                    android:id="@+id/expander"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:background="#02FFFFFF"
+                    android:contentDescription="@string/tap_to_expand"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/title"
+                    app:srcCompat="@drawable/ic_baseline_expand_more_24" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toTopOf="@+id/total"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/subtitle" />
+
+                <TextView
+                    android:id="@+id/total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:text="@string/total"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                    app:layout_constraintBottom_toTopOf="@id/navigateToScheduler"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/total_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:text="@{String.valueOf(viewModel.total)}"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+                    app:layout_constraintBottom_toTopOf="@id/navigateToScheduler"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:text="@string/dollar"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+                    app:layout_constraintBottom_toTopOf="@id/navigateToScheduler"
+                    app:layout_constraintEnd_toStartOf="@id/total_price" />
+
+                <Button
+                    android:id="@+id/navigateToScheduler"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_margin="16dp"
+                    android:onClick="@{ () -> viewModel.onNavigateToScheduler()}"
+                    android:text="@string/next"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </ScrollView>
+</layout>

@@ -15,11 +15,9 @@ class SchedulerViewModel: ViewModel() {
     var name: String = ""
     var number: String = ""
     var address: String = ""
-    var propertyName:String = ""
-    var unit = ""
 
     val form = FormCache.getForm() ?: Form(
-        date, time, name, number, address, propertyName, unit
+        date, time, name, number, address
     )
 
 

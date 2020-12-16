@@ -15,7 +15,11 @@ data class Form(
     var time: String,
     var name: String,
     var number: String,
-    var address: String,
-    var propertyName: String?,
-    var unit: String?
+    var address: String
+)
+
+data class User(
+    var name: String,
+    var number: String,
+    var address: String
 )

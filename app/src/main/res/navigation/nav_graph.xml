@@ -11,7 +11,9 @@
         tools:layout="@layout/fragment_launch">
         <action
             android:id="@+id/action_launchFragment_to_servicesFragment"
-            app:destination="@id/servicesFragment" />
+            app:destination="@id/servicesFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/customerScheduler"
@@ -20,7 +22,9 @@
         tools:layout="@layout/fragment_customer_scheduler">
         <action
             android:id="@+id/action_customerScheduler_to_appointmentConfirmation"
-            app:destination="@id/appointmentConfirmation" />
+            app:destination="@id/appointmentConfirmation"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/servicesFragment"
@@ -37,13 +41,17 @@
         tools:layout="@layout/fragment_expanded_service">
         <action
             android:id="@+id/action_expandedServiceFragment_to_customerScheduler"
-            app:destination="@id/customerScheduler" />
+            app:destination="@id/customerScheduler"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
         <argument
             android:name="serviceId"
             app:argType="long" />
         <action
             android:id="@+id/action_expandedServiceFragment_to_navigation"
-            app:destination="@id/appointmentConfirmation" />
+            app:destination="@id/appointmentConfirmation"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@animator/nav_default_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/appointmentConfirmation"
@@ -52,13 +60,22 @@
         tools:layout="@layout/fragment_appointment_confirmation">
         <action
             android:id="@+id/action_appointmentConfirmation_to_editServiceFragment"
-            app:destination="@id/editServiceFragment" />
+            app:destination="@id/editServiceFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@animator/nav_default_exit_anim" />
         <action
             android:id="@+id/action_appointmentConfirmation_to_servicesFragment"
             app:destination="@id/servicesFragment" />
         <action
             android:id="@+id/action_appointmentConfirmation_to_customerScheduler"
-            app:destination="@id/customerScheduler" />
+            app:destination="@id/customerScheduler"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+        <action
+            android:id="@+id/action_appointmentConfirmation_to_submitFragment"
+            app:destination="@id/submitFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/editServiceFragment"
@@ -74,5 +91,26 @@
         <action
             android:id="@+id/action_editServiceFragment_to_appointmentConfirmation"
             app:destination="@id/appointmentConfirmation" />
+    </fragment>
+    <fragment
+        android:id="@+id/submitFragment"
+        android:name="com.example.carpetcleaner.SubmitFragment"
+        android:label="Verify phone number"
+        tools:layout="@layout/fragment_submit">
+        <action
+            android:id="@+id/action_submitFragment_to_appointmentRequestReceivedFragment"
+            app:destination="@id/appointmentRequestReceivedFragment"
+            app:popUpTo="@id/submitFragment"
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/appointmentRequestReceivedFragment"
+        android:name="com.example.carpetcleaner.AppointmentRequestReceivedFragment"
+        tools:layout="@layout/fragment_appointment_request_received">
+        <action
+            android:id="@+id/action_appointmentRequestReceivedFragment_to_launchFragment"
+            app:destination="@id/launchFragment" />
     </fragment>
 </navigation>

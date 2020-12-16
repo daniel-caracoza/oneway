@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1090701940119",
+    "project_id": "oneway-f9e72",
+    "storage_bucket": "oneway-f9e72.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1090701940119:android:e61294ae5c858d3a1560d2",
+        "android_client_info": {
+          "package_name": "com.example.carpetcleaner"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1090701940119-qqbs2tjtsl2rr06nbfuq855am25ufmro.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.carpetcleaner",
+            "certificate_hash": "6611eb4536aa17a5e13f4e03214eee772e5c3b79"
+          }
+        },
+        {
+          "client_id": "1090701940119-bq4alqvd0ucm0o43e7gc531tthk0d3j3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXnyHe5uBHishMaw3BMc3f6nuZGy5_HI4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1090701940119-bq4alqvd0ucm0o43e7gc531tthk0d3j3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

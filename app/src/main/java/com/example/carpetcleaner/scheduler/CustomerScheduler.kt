@@ -53,7 +53,10 @@ class CustomerScheduler : Fragment(), TimePickerFragment.TimePickerDialogListene
         }
 
         binding.customerNumber.editText?.doAfterTextChanged {
-            viewModel.form.number = it.toString()
+            val defaultCountry = "+1"
+            val number = it.toString()
+            val fullNumber = "$defaultCountry$number"
+            viewModel.form.number = fullNumber
             viewModel.isNecessaryInformationProvided()
         }
 
@@ -65,14 +68,6 @@ class CustomerScheduler : Fragment(), TimePickerFragment.TimePickerDialogListene
         binding.customerAddress.editText?.doAfterTextChanged {
             viewModel.form.address = it.toString()
             viewModel.isNecessaryInformationProvided()
-        }
-
-        binding.propertyName.editText?.doAfterTextChanged {
-            viewModel.form.propertyName = it.toString()
-        }
-
-        binding.unit.editText?.doAfterTextChanged {
-            viewModel.unit = it.toString()
         }
 
         viewModel.oldDate.observe(viewLifecycleOwner, Observer { newDate ->

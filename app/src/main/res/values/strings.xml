@@ -45,4 +45,11 @@
     <string name="item_expander">item expander</string>
     <string name="add_on">Add Ons:</string>
     <string name="your_services">Your Services Total: </string>
+    <string name="enter_verify">Verify</string>
+    <string name="verify">Enter the code sent to the phone number provided to confirm contact and appointment information</string>
+    <string name="verification_code">Verification code</string>
+    <string name="resend_verification">Resend Code</string>
+    <string name="invalid_verification">Invalid Code</string>
+    <string name="return_home">Return Home</string>
+    <string name="closing_msg">Thank You %1s for using One Way Mobile Scheduling service! Your appointment request has been received for date: %2s</string>
 </resources>

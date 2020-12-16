@@ -1,6 +1,7 @@
 package com.example.carpetcleaner.review
 
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import android.widget.ImageView
 import android.widget.PopupMenu
@@ -16,6 +17,12 @@ import com.example.carpetcleaner.data.FormCache
 import com.example.carpetcleaner.data.ScheduledService
 import com.example.carpetcleaner.databinding.FragmentAppointmentConfirmationBinding
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.FirebaseException
+import com.google.firebase.FirebaseTooManyRequestsException
+import com.google.firebase.auth.*
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
+import java.util.concurrent.TimeUnit
 
 
 class AppointmentConfirmation : Fragment(), ScheduledServiceListener {
@@ -24,11 +31,13 @@ class AppointmentConfirmation : Fragment(), ScheduledServiceListener {
     private lateinit var binding: FragmentAppointmentConfirmationBinding
     private lateinit var viewModel: AppointmentConfirmationViewModel
     private val form: Form? = FormCache.getForm()
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        auth = Firebase.auth
         binding = DataBindingUtil.inflate(inflater,
             R.layout.fragment_appointment_confirmation, container, false)
         viewModel = ViewModelProvider(this).get(AppointmentConfirmationViewModel::class.java)
@@ -83,6 +92,9 @@ class AppointmentConfirmation : Fragment(), ScheduledServiceListener {
     override fun onOptionsItemSelected(item: MenuItem): Boolean =
         when(item.itemId){
             R.id.submit -> {
+                this.findNavController().navigate(
+                    AppointmentConfirmationDirections.actionAppointmentConfirmationToSubmitFragment()
+                )
                 true
             } else -> true
         }

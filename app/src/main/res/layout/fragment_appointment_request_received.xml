@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -12,7 +11,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center"
-        tools:context=".SubmitFragment">
+        tools:context=".ui.AppointmentRequestReceivedFragment">
 
         <TextView
             android:id="@+id/txtView"

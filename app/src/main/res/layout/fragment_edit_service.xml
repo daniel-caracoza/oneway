@@ -9,7 +9,7 @@
 
         <variable
             name="viewModel"
-            type="com.example.carpetcleaner.expanded_service.ExpandedServiceViewModel" />
+            type="com.example.carpetcleaner.ui.expanded_service.ExpandedServiceViewModel" />
     </data>
 
     <ScrollView

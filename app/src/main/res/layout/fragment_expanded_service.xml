@@ -10,7 +10,7 @@
 
         <variable
             name="viewModel"
-            type="com.example.carpetcleaner.expanded_service.ExpandedServiceViewModel" />
+            type="com.example.carpetcleaner.ui.expanded_service.ExpandedServiceViewModel" />
 
     </data>
 
@@ -63,16 +63,6 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/title" />
 
-                <ImageButton
-                    android:id="@+id/expander"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="16dp"
-                    android:background="#02FFFFFF"
-                    android:contentDescription="@string/tap_to_expand"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/title"
-                    app:srcCompat="@drawable/ic_baseline_expand_more_24" />
 
                 <LinearLayout
                     android:id="@+id/linearLayout"

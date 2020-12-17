@@ -49,6 +49,7 @@ data class ScheduledService(
     val subServices: MutableList<SubService> = mutableListOf(),
     var checkBoxStates: MutableList<Boolean> = mutableListOf()
 ): RecyclerViewItem() {
+
     override fun equals(other: Any?): Boolean {
         other as ScheduledService
         return this.id == other.id && this.serviceId == other.serviceId && this.total == other.total &&

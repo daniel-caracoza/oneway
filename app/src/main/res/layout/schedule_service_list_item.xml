@@ -10,7 +10,7 @@
 
         <variable
             name="clickListener"
-            type="com.example.carpetcleaner.review.ScheduledServiceListener" />
+            type="com.example.carpetcleaner.ui.review.ScheduledServiceListener" />
     </data>
 
     <com.google.android.material.card.MaterialCardView

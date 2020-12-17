@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/launchFragment"
-        android:name="com.example.carpetcleaner.LaunchFragment"
+        android:name="com.example.carpetcleaner.ui.LaunchFragment"
         tools:layout="@layout/fragment_launch">
         <action
             android:id="@+id/action_launchFragment_to_servicesFragment"
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/customerScheduler"
-        android:name="com.example.carpetcleaner.scheduler.CustomerScheduler"
+        android:name="com.example.carpetcleaner.ui.scheduler.CustomerScheduler"
         android:label="Contact Information"
         tools:layout="@layout/fragment_customer_scheduler">
         <action
@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/servicesFragment"
-        android:name="com.example.carpetcleaner.services.ServicesFragment"
+        android:name="com.example.carpetcleaner.ui.services.ServicesFragment"
         android:label="Select A Service"
         tools:layout="@layout/fragment_services">
         <action
@@ -37,7 +37,7 @@
     </fragment>
     <fragment
         android:id="@+id/expandedServiceFragment"
-        android:name="com.example.carpetcleaner.expanded_service.ExpandedServiceFragment"
+        android:name="com.example.carpetcleaner.ui.expanded_service.ExpandedServiceFragment"
         tools:layout="@layout/fragment_expanded_service">
         <action
             android:id="@+id/action_expandedServiceFragment_to_customerScheduler"
@@ -55,7 +55,7 @@
     </fragment>
     <fragment
         android:id="@+id/appointmentConfirmation"
-        android:name="com.example.carpetcleaner.review.AppointmentConfirmation"
+        android:name="com.example.carpetcleaner.ui.review.AppointmentConfirmation"
         android:label="@string/review"
         tools:layout="@layout/fragment_appointment_confirmation">
         <action
@@ -79,7 +79,7 @@
     </fragment>
     <fragment
         android:id="@+id/editServiceFragment"
-        android:name="com.example.carpetcleaner.review.EditServiceFragment"
+        android:name="com.example.carpetcleaner.ui.review.EditServiceFragment"
         android:label="Edit Service"
         tools:layout="@layout/fragment_edit_service">
         <argument
@@ -94,7 +94,7 @@
     </fragment>
     <fragment
         android:id="@+id/submitFragment"
-        android:name="com.example.carpetcleaner.SubmitFragment"
+        android:name="com.example.carpetcleaner.ui.SubmitFragment"
         android:label="Verify phone number"
         tools:layout="@layout/fragment_submit">
         <action
@@ -107,7 +107,7 @@
     </fragment>
     <fragment
         android:id="@+id/appointmentRequestReceivedFragment"
-        android:name="com.example.carpetcleaner.AppointmentRequestReceivedFragment"
+        android:name="com.example.carpetcleaner.ui.AppointmentRequestReceivedFragment"
         tools:layout="@layout/fragment_appointment_request_received">
         <action
             android:id="@+id/action_appointmentRequestReceivedFragment_to_launchFragment"

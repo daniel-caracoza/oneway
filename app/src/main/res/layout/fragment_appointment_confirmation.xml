@@ -11,7 +11,7 @@
 
         <variable
             name="viewModel"
-            type="com.example.carpetcleaner.review.AppointmentConfirmationViewModel" />
+            type="com.example.carpetcleaner.ui.review.AppointmentConfirmationViewModel" />
 
     </data>
 
@@ -19,7 +19,7 @@
         android:id="@+id/apptConfirmation"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".review.AppointmentConfirmation">
+        tools:context=".ui.review.AppointmentConfirmation">
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/info_card"

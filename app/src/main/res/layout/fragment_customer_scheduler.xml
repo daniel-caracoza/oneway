@@ -10,7 +10,7 @@
 
         <variable
             name="viewModel"
-            type="com.example.carpetcleaner.scheduler.SchedulerViewModel" />
+            type="com.example.carpetcleaner.ui.scheduler.SchedulerViewModel" />
     </data>
 
     <ScrollView
@@ -21,7 +21,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:context=".scheduler.CustomerScheduler">
+            tools:context=".ui.scheduler.CustomerScheduler">
 
 
             <com.google.android.material.textfield.TextInputLayout
